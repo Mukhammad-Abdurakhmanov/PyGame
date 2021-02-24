@@ -17,7 +17,6 @@ HEADER_MARGIN = 70
 MARGIN = 1
 size = [SIZE_BLOCK * COUNT_BLOCKS + 2 * SIZE_BLOCK + MARGIN * COUNT_BLOCKS,
         SIZE_BLOCK * COUNT_BLOCKS + 2 * SIZE_BLOCK + MARGIN * COUNT_BLOCKS + HEADER_MARGIN]
-print(size)
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption('Змейка')
 timer = pygame.time.Clock()
@@ -64,7 +63,6 @@ def start_the_game():
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                print('exit')
                 pygame.quit()
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
@@ -100,7 +98,6 @@ def start_the_game():
 
         head = snake_blocks[-1]
         if not head.is_inside():
-            print('crash')
             break
             # pygame.quit()
             # sys.exit()
@@ -125,7 +122,6 @@ def start_the_game():
         new_head = SnakeBlock(head.x + d_row, head.y + d_col)
 
         if new_head in snake_blocks:
-            print('crash yourself')
             break
             # pygame.quit()
             # sys.exit()
